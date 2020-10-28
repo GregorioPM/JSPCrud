@@ -17,14 +17,14 @@ public class EquipoDao {
 	private static final String DELETE_EQUIPO_SQL= "DELETE FROM equipo WHERE id = ?;";
 	private static final String UPDATE_EQUIPO_SQL= "UPDATE equipo SET nombre = ?, pais = ? , trofeos = ? WHERE id = ? ;";
 	private static final String SELECT_EQUIPO_BY_ID= "SELECT * FROM equipo WHERE ID = ?;";
-	private static final String SELECT_ALL_EQUIPOS= "SELECT * FROM equipo";
+	private static final String SELECT_ALL_EQUIPOS= "SELECT * FROM equipo;";
 	
 	public EquipoDao() {
 		this.conexion = Conexion.getConexion();
 	}
 	
 	
-	public void insert(Equipo equipo) {
+	public void insert(Equipo equipo) throws SQLException{
 		try {
 			PreparedStatement preparedStatement = (PreparedStatement)conexion.setPreparedStatement(INSERT_EQUIPO_SQL);
 			preparedStatement.setString(1, equipo.getNombre());
@@ -35,7 +35,7 @@ public class EquipoDao {
 		}
 	}
 	
-	public void delete(int id) {
+	public void delete(int id) throws SQLException{
 		try {
 			PreparedStatement preparedStatement = (PreparedStatement)conexion.setPreparedStatement(DELETE_EQUIPO_SQL);
 			preparedStatement.setInt(1, id);
@@ -44,7 +44,7 @@ public class EquipoDao {
 		}
 	}
 	
-	public void update(Equipo equipo) {
+	public void update(Equipo equipo) throws SQLException{
 		try {
 			PreparedStatement preparedStatement = (PreparedStatement)conexion.setPreparedStatement(UPDATE_EQUIPO_SQL);
 			preparedStatement.setString(1, equipo.getNombre());

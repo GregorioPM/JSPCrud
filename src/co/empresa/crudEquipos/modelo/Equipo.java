@@ -18,6 +18,12 @@ public class Equipo implements Serializable {
 	private String pais;
 	
 	private String trofeos;
+	
+	public Equipo(String nombre, String pais, String trofeos) {
+		this.nombre= nombre;
+		this.pais = pais;
+		this.trofeos = trofeos;
+	}
 
 
 }
