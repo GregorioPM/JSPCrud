@@ -12,7 +12,7 @@
 <body>
 
  <header>
-                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
+                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #03a9f4">
                     <div>
                         <a href="#" class="navbar-brand"> Gestión de Usuarios </a>
                     </div>
